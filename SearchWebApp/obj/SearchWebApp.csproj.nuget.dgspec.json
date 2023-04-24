@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dev\\devcs\\SearchOld\\11\\SearchWebApp\\SearchWebApp\\SearchWebApp.csproj": {}
+    "D:\\dev\\devcs\\SearchWebApp\\SearchWebApp\\SearchWebApp.csproj": {}
   },
   "projects": {
-    "D:\\dev\\devcs\\SearchOld\\11\\SearchWebApp\\SearchWebApp\\SearchWebApp.csproj": {
+    "D:\\dev\\devcs\\SearchWebApp\\SearchWebApp\\SearchWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dev\\devcs\\SearchOld\\11\\SearchWebApp\\SearchWebApp\\SearchWebApp.csproj",
+        "projectUniqueName": "D:\\dev\\devcs\\SearchWebApp\\SearchWebApp\\SearchWebApp.csproj",
         "projectName": "SearchWebApp",
-        "projectPath": "D:\\dev\\devcs\\SearchOld\\11\\SearchWebApp\\SearchWebApp\\SearchWebApp.csproj",
+        "projectPath": "D:\\dev\\devcs\\SearchWebApp\\SearchWebApp\\SearchWebApp.csproj",
         "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "D:\\dev\\devcs\\SearchOld\\11\\SearchWebApp\\SearchWebApp\\obj\\",
+        "outputPath": "D:\\dev\\devcs\\SearchWebApp\\SearchWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",

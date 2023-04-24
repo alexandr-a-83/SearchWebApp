@@ -9,37 +9,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SearchWebApp
 build_property.RootNamespace = SearchWebApp
-build_property.ProjectDir = D:\dev\devcs\SearchOld\11\SearchWebApp\SearchWebApp\
+build_property.ProjectDir = D:\dev\devcs\SearchWebApp\SearchWebApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\dev\devcs\SearchOld\11\SearchWebApp\SearchWebApp
+build_property.MSBuildProjectDirectory = D:\dev\devcs\SearchWebApp\SearchWebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/dev/devcs/SearchOld/11/SearchWebApp/SearchWebApp/Pages/Error.cshtml]
+[D:/dev/devcs/SearchWebApp/SearchWebApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dev/devcs/SearchOld/11/SearchWebApp/SearchWebApp/Pages/RamdomBooksList.cshtml]
+[D:/dev/devcs/SearchWebApp/SearchWebApp/Pages/RamdomBooksList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmFtZG9tQm9va3NMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dev/devcs/SearchOld/11/SearchWebApp/SearchWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/dev/devcs/SearchWebApp/SearchWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dev/devcs/SearchOld/11/SearchWebApp/SearchWebApp/Pages/_ViewImports.cshtml]
+[D:/dev/devcs/SearchWebApp/SearchWebApp/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dev/devcs/SearchOld/11/SearchWebApp/SearchWebApp/Pages/_ViewStart.cshtml]
+[D:/dev/devcs/SearchWebApp/SearchWebApp/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dev/devcs/SearchOld/11/SearchWebApp/SearchWebApp/Pages/Index.cshtml]
+[D:/dev/devcs/SearchWebApp/SearchWebApp/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s6qpta65yu
 
-[D:/dev/devcs/SearchOld/11/SearchWebApp/SearchWebApp/Pages/Shared/_Layout.cshtml]
+[D:/dev/devcs/SearchWebApp/SearchWebApp/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-dmcmx9f8rt
