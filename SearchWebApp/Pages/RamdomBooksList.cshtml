@@ -1,0 +1,52 @@
+﻿@page
+@model SearchWebApp.Pages.RamdomBooksListModel
+@{
+}
+
+<div class="mt-5">
+    <h3>List of books contains @Model.NumberOfRecords records</h3>
+</div>
+
+
+<table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Author</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model.PaginedBooks)
+        {
+            <tr>
+                <td>@b.Id</td>
+                <td>@b.Author</td>
+                <td>@b.Name</td>
+                <td>@b.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.PaginedBooks.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.PaginedBooks.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./RamdomBooksList"
+   asp-route-sortOrder=""
+   asp-route-pageIndex="@(Model.PaginedBooks.PageIndex - 1)"
+   asp-route-currentFilter=""
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./RamdomBooksList"
+   asp-route-sortOrder=""
+   asp-route-pageIndex="@(Model.PaginedBooks.PageIndex + 1)"
+   asp-route-currentFilter=""
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>
+

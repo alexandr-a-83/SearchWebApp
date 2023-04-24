@@ -1,0 +1,85 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Search page";    
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4">
+        Search service 
+    </h1>    
+    @if (Model.PaginedBooks is null || Model.PaginedBooks.ToList().Count == 0)
+    {
+    }
+    else
+    {
+        <h5>Found <b>@Model.ResulnCounter</b> records</h5>
+    }
+</div>
+
+
+
+
+<form method="post" class="searchForm mt-5">
+    <div class="input-group">
+        <input class="form-control" type="text" asp-for="SearchValue" placeholder="Search" />
+        <div class="input-group-append ms-1">
+            <button asp-page="./Index" class="btn btn-primary" type="submit">Go</button>
+        </div>
+    </div>
+</form>
+
+
+ 
+
+@if (Model.PaginedBooks is null || Model.PaginedBooks.ToList().Count == 0)
+{
+    <div class="text-center mt-5">        
+            <h5>There is no information to show</h5>        
+    </div>
+    
+}
+else
+{  
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Author</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var b in Model.PaginedBooks)
+            {
+                <tr>
+                    <td>@b.Id</td>
+                    <td>@b.Author</td>
+                    <td>@b.Name</td>
+                    <td>@b.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>    
+
+    var prevDisabled = !Model.PaginedBooks.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.PaginedBooks.HasNextPage ? "disabled" : "";
+
+
+    <a asp-page="./Index"
+       asp-route-sortOrder=""
+       asp-route-pageIndex="@(Model.PaginedBooks.PageIndex - 1)"
+       asp-route-currentFilter=""
+       class="btn btn-primary @prevDisabled">
+        Previous
+    </a>
+    <a asp-page="./Index"
+       asp-route-sortOrder=""
+       asp-route-pageIndex="@(Model.PaginedBooks.PageIndex + 1)"
+       asp-route-currentFilter=""
+       class="btn btn-primary @nextDisabled">
+        Next
+    </a>
+}
+
