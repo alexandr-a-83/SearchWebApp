@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace SearchWebApp.Services
 {
-    public class DataProvider : IDataProvider
+    public class DataProvider
     {
         private readonly IConfiguration Configuration;
 
