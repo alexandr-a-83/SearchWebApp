@@ -4,23 +4,29 @@ using System.Xml.Linq;
 
 namespace SearchWebApp.Services
 {
-    public class DataProvider
+    public class DataProvider : IDataProvider
     {
-        public int numberOfRecords = 5000;        
-        
+        private readonly IConfiguration Configuration;
+
+        public int numberOfRecords;
+
         public IEnumerable<BookModel> books;
 
         public IEnumerable<BookModel> searchResult;
 
         SearchEngine searchEngine;
 
-        public DataProvider()
-        {      
+        public DataProvider(IConfiguration configuration)
+        {
+            Configuration = configuration;
+            numberOfRecords = Configuration.GetValue("NumberOfRecords", 5000);
+
             GetBooksList();
             searchResult = new List<BookModel>();
 
             searchEngine = new SearchEngine(books);
-        }       
+
+        }
 
         private void GetBooksList()
         {
@@ -28,9 +34,9 @@ namespace SearchWebApp.Services
             {
                 books = new List<BookModel>();
 
-                DataGenerator dataGenerator = new DataGenerator();
+                DataGenerator dataGenerator = new DataGenerator(Configuration);
                 books = dataGenerator.GenerateBooks(numberOfRecords);
-            }  
+            }
         }
 
         public void GetSearchResult(string searchValue)

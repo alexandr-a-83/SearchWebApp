@@ -24,10 +24,8 @@ namespace SearchWebApp.Services
             var directory = new RAMDirectory();
 
             using (var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30))
-            using (var indexWriter = new IndexWriter(directory, analyzer, new IndexWriter.MaxFieldLength(1000)))
+            using (var indexWriter = new IndexWriter(directory, analyzer, new IndexWriter.MaxFieldLength(_books.Count())))
             {
-
-
                 foreach (var book in _books)
                 {
                     Document document = new Document();
@@ -90,7 +88,6 @@ namespace SearchWebApp.Services
                     {
                         searchResult.Clear();
                     }
-
                 }
             }
 

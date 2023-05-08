@@ -1,19 +1,29 @@
 ﻿using Bogus;
 using SearchWebApp.Models;
+using System.Configuration;
 
 namespace SearchWebApp.Services
 {
     public class DataGenerator
-    {        
+    {
+
+        private readonly IConfiguration Configuration;
+        private int useSeed;
 
         Faker<BookModel> _bookFaker;  
         
         IEnumerable<BookModel> _books;        
 
-        public DataGenerator()
-        {              
+        public DataGenerator(IConfiguration configuration)
+        {
+            Configuration = configuration;
+            var useSeed = Configuration.GetValue("FakerDBNumber", 2000);
+
             _bookFaker = new Faker<BookModel>()
-                .UseSeed(2000)
+                
+                // Method for creating same DB
+                .UseSeed(useSeed)
+
                 .RuleFor(b => b.Id, f => f.IndexFaker)
                 .RuleFor(b => b.Name, f => f.Name.JobTitle())
                 .RuleFor(b => b.Author, f => f.Name.FullName())

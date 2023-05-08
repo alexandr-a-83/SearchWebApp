@@ -10,7 +10,7 @@ namespace SearchWebApp
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-            builder.Services.AddSingleton<DataProvider>();
+            builder.Services.AddSingleton<IDataProvider, DataProvider>();
 
             var app = builder.Build();
 

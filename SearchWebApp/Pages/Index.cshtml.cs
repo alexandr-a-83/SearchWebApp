@@ -11,6 +11,8 @@ namespace SearchWebApp.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private readonly IConfiguration Configuration;
+        private int pageSize;
 
         [BindProperty]
         public int ResulnCounter
@@ -39,10 +41,12 @@ namespace SearchWebApp.Pages
             get; set;
         }
 
-        public IndexModel(DataProvider dataProvider)
+        public IndexModel(DataProvider dataProvider, IConfiguration configuration)
         {
             _dataProvider = dataProvider;
             Books = _dataProvider.books.ToList<BookModel>();
+            Configuration = configuration;
+            pageSize = Configuration.GetValue("PageSize", 10);
         }
 
         public async Task OnGetAsync(int? pageIndex)
@@ -53,8 +57,7 @@ namespace SearchWebApp.Pages
             ResulnCounter = Books.Count();
 
             IQueryable<BookModel> booksIQ = from s in Books.AsQueryable<BookModel>() select s;
-
-            var pageSize = 50;
+            
             PaginedBooks = await PaginatedList<BookModel>.CreateAsync(
                 booksIQ.AsNoTracking(), pageIndex ?? 1, pageSize);          
 
@@ -75,9 +78,7 @@ namespace SearchWebApp.Pages
             ResulnCounter = Books.Count();
 
             IQueryable<BookModel> booksIQ = from s in Books.AsQueryable<BookModel>() select s;
-
-            var pageSize = 50;            
-
+                      
             PaginedBooks = await PaginatedList<BookModel>.CreateAsync(
                 booksIQ.AsNoTracking(), 1, pageSize);            
 
